@@ -8,7 +8,7 @@ import {
 import BlogLayout from "./pages/BlogLayout";
 import ErrorPage from "./pages/Error";
 import BlogPostsPage, { loader as blogPostsLoader } from "./pages/BlogPosts";
-import NewPostPage from "./pages/NewPost";
+import NewPostPage, { action as newPostAction } from "./pages/NewPost";
 import PostDetailPage, { loader as blogPostLoader } from "./pages/PostDetail";
 import RootLayout from "./components/RootLayout";
 import WelcomePage from "./pages/Welcome";
@@ -25,7 +25,11 @@ const router = createBrowserRouter(
           loader={blogPostLoader}
         />
       </Route>
-      <Route path="/blog/new" element={<NewPostPage />} />
+      <Route
+        path="/blog/new"
+        element={<NewPostPage />}
+        action={newPostAction}
+      />
     </Route>
   )
 );
